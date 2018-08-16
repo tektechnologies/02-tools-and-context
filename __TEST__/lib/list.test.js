@@ -10,10 +10,13 @@ describe('List', () => {
     });
   });
 
-describe('push', () => {
-
-  
-})
+  describe('push', () => {
+    it('adds new things to the end of the list', () => {
+      var list = new list();
+      list.push('test');
+      expect(list.length).tobe(0);
+    });
+  });
 
 
 });
