@@ -3,6 +3,7 @@
 const List = require('../../lib/list');
 
 describe('List', () => {
+
   describe('constructor', () => {
     it('has length of zero', () => {
       var list = new List();
@@ -29,15 +30,17 @@ describe('List', () => {
   });
 
   //pop
-  // describe('pop', () => {
-  //   it('removes last list element', () => {
-  //     var list = new List();
-  //     list.push('A');
-  //     list.push('B');
-
-  //     expect(list['broccoli', 'cauliflower']).toBe('cauliflower');
-  //   });
-  // });
+  describe('pop', () => {
+    it('removes last list element', () => {
+      var list = new List();
+      list.push('A');
+      list.push('B');
+      list.pop();
+      expect(list.length).toBe(1);
+      list.pop();
+      expect(list.length).toBe(0);
+    });
+  });
   //slice
   describe('slice', () => {
     it('returns sliced elements from array', () => {
@@ -55,18 +58,6 @@ describe('List', () => {
   });
 
 
-  describe('reduce', () => {
-    it('take variable amount of elements reduces() => 1 value', () => {
-      let list = new List();
-      list.push(1);
-      list.push(2);
-      list.push(3);
-      list.push(2);
-      
-      var res = list.reduce((acc, value) => acc + value);
-      expect(res).toEqual(8);
-    });
-  });
 
 
 
@@ -113,4 +104,27 @@ describe('List', () => {
       expect(res[1]).toEqual({element: 'unbuntu', index: 1});
     });
   });
+
+
+
+  describe('reduce', ()=>{
+    it('take a variable amount of elements reduces() => 1 value', ()=>{
+      var list = new List();
+      list.push(1);
+      list.push(2);
+      list.push(3);
+      list.push(2);
+      
+      var res = list.reduce((acc, val)=> acc + val);
+      expect(res).toBe(8);
+    });
+  });
+
+
+
+
+
+
 });
+
+
