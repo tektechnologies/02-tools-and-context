@@ -64,14 +64,14 @@ describe('List', () => {
 
 
   
-  describe('foreach', () => {
+  describe('forEach', () => {
     it('returns callback to elements in list', () => {
       var list = new List();
       list.push('iMac');
       list.push('iPod');
       list.push('Apple2E');
       list.push('');
-      list.foreach(element => element.length);
+      list.forEach(element => element.length);
       expect(list).toEqual({'0': 4, '1': 4, '2': 7, '3': 0, 'length':4});
     });
   });
@@ -114,9 +114,10 @@ describe('List', () => {
       list.push(2);
       list.push(3);
       list.push(2);
-      
+      console.log(list);
+      expect(list).toEqual({ '0': 1, '1': 2, '2': 3, '3': 2, length: 4 });
       var res = list.reduce((acc, val)=> acc + val);
-      expect(res).toBe(8);
+      expect(res).toEqual(8);
     });
   });
 
