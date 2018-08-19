@@ -42,15 +42,15 @@ describe('List', () => {
   describe('slice', () => {
     it('returns sliced elements from array', () => {
       let list = new List();
-      list.push('A');
-      list.push('B');
-      list.push('C');
-      list.push('D');
-      list.push('E');
-      let sliceIt = list.slice(0);
-      let diceIt =  list.slice(4);
-      expect(sliceIt).toBe({'0': 'A', 'length': 1});
-      expect(diceIt).toBe({'0': 'D','1': 'E', 'length': 2});
+      list.push(1);
+      list.push(2);
+      list.push(3);
+      list.push(4);
+      //list.push(5);
+      let sliceIt = list.slice(3);
+      let diceIt =  list.slice(1);
+      expect(sliceIt).toEqual({'0': 4, 'length': 1});
+      expect(diceIt).toEqual({'0': 2,'1': 3, '2': 4,'length': 3});
     });
   });
 
@@ -58,13 +58,13 @@ describe('List', () => {
   describe('reduce', () => {
     it('take variable amount of elements reduces() => 1 value', () => {
       let list = new List();
-      list.push('1');
-      list.push('2');
-      list.push('3');
-      list.push('2');
+      list.push(1);
+      list.push(2);
+      list.push(3);
+      list.push(2);
       
       var res = list.reduce((acc, value) => acc + value);
-      expect(res).toBe(8);
+      expect(res).toEqual(8);
     });
   });
 
