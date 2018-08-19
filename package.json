@@ -23,5 +23,6 @@
   "homepage": "https://github.com/tektechnologies/02-tools-and-context#readme",
   "devDependencies": {
     "jest": "^23.5.0"
-  }
+  },
+  "dependencies": {}
 }
