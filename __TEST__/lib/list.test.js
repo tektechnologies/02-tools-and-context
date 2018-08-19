@@ -108,20 +108,27 @@ describe('List', () => {
 
 
   describe('reduce', ()=>{
-    it('take a variable amount of elements reduces() => 1 value', ()=>{
+    it('returns initial value for empty list', ()=>{
+      var list = new List();
+      var initial = {};
+      expect(list.reduce(()=> 'ignored', initial)).toBe(initial);
+    });
+    it('pushes elements', () => {
       var list = new List();
       list.push(1);
+    });
+    it('is equal to the elements in itself', () => {
+      var list = new List();
+      list.push('1');
       list.push(2);
       list.push(3);
       list.push(2);
       console.log(list);
-      expect(list).toEqual({ '0': 1, '1': 2, '2': 3, '3': 2, length: 4 });
-      var res = list.reduce((acc, val)=> acc + val);
-      expect(res).toEqual(8);
+      expect(list).toEqual({ '0': '1', '1': 2, '2': 3, '3': 2, length: 4 });
+    // var res = list.reduce((acc, val)=> acc + val);
+    // expect(res).toBe('truetruetruetrue');
     });
   });
-
-
 
 
 
