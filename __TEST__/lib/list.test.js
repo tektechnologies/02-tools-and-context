@@ -55,7 +55,18 @@ describe('List', () => {
   });
 
 
-
+  describe('reduce', () => {
+    it('take variable amount of elements reduces() => 1 value', () => {
+      let list = new List();
+      list.push('1');
+      list.push('2');
+      list.push('3');
+      list.push('2');
+      
+      var res = list.reduce((acc, value) => acc + value);
+      expect(res).toBe(8);
+    });
+  });
 
 
 
