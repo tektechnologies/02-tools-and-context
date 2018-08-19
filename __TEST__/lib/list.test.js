@@ -28,6 +28,52 @@ describe('List', () => {
     });
   });
 
+  //pop
+  // describe('pop', () => {
+  //   it('removes last list element', () => {
+  //     var list = new List();
+  //     list.push('A');
+  //     list.push('B');
+
+  //     expect(list['broccoli', 'cauliflower']).toBe('cauliflower');
+  //   });
+  // });
+  //slice
+  describe('slice', () => {
+    it('returns sliced elements from array', () => {
+      let list = new List();
+      list.push('A');
+      list.push('B');
+      list.push('C');
+      list.push('D');
+      list.push('E');
+      let sliceIt = list.slice(0);
+      let diceIt =  list.slice(4);
+      expect(sliceIt).toBe({'0': 'A', 'length': 1});
+      expect(diceIt).toBe({'0': 'D','1': 'E', 'length': 2});
+    });
+  });
+
+
+
+
+
+
+
+
+  
+  describe('foreach', () => {
+    it('returns callback to elements in list', () => {
+      var list = new List();
+      list.push('iMac');
+      list.push('iPod');
+      list.push('Apple2E');
+      list.push('');
+      list.foreach(element => element.length);
+      expect(list).toEqual({'0': 4, '1': 4, '2': 7, '3': 0, 'length':4});
+    });
+  });
+
 
   describe('map', () => {
     it('returns a new list', () => {
