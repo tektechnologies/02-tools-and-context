@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/tektechnologies/02-tools-and-context#readme",
   "devDependencies": {
+    "eslint": "^5.4.0",
     "jest": "^23.5.0"
   },
   "dependencies": {}
